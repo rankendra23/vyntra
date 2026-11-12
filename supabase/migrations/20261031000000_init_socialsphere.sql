@@ -1,5 +1,5 @@
 -- ============================================================================
--- SocialSphere PostgreSQL Schema & Row Level Security (RLS)
+-- Vyntra PostgreSQL Schema & Row Level Security (RLS)
 -- ============================================================================
 
 -- Enable pgcrypto for UUID generation if not already enabled

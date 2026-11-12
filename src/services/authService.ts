@@ -29,7 +29,7 @@ export const authService = {
       };
       mockStore.updateProfile(newUserId, newProfile);
       const user = { id: newUserId, email: params.email };
-      localStorage.setItem('socialsphere_active_user', JSON.stringify({ user, profile: newProfile }));
+      localStorage.setItem('vyntra_active_user', JSON.stringify({ user, profile: newProfile }));
       return { user, profile: newProfile };
     }
 
@@ -57,7 +57,7 @@ export const authService = {
   async signIn(email: string, password: string): Promise<{ user: any; profile: Profile }> {
     if (!isSupabaseConfigured) {
       // Allow sign-in with any credentials in demo mode, or check mock
-      const existing = localStorage.getItem('socialsphere_active_user');
+      const existing = localStorage.getItem('vyntra_active_user');
       let profile: Profile;
       let user: any;
 
@@ -72,7 +72,7 @@ export const authService = {
       }
 
       const session = { user, profile };
-      localStorage.setItem('socialsphere_active_user', JSON.stringify(session));
+      localStorage.setItem('vyntra_active_user', JSON.stringify(session));
       return session;
     }
 
@@ -90,7 +90,7 @@ export const authService = {
 
   async signOut(): Promise<void> {
     if (!isSupabaseConfigured) {
-      localStorage.removeItem('socialsphere_active_user');
+      localStorage.removeItem('vyntra_active_user');
       return;
     }
     await supabase.auth.signOut();
@@ -98,7 +98,7 @@ export const authService = {
 
   async getSession(): Promise<{ user: any; profile: Profile | null } | null> {
     if (!isSupabaseConfigured) {
-      const stored = localStorage.getItem('socialsphere_active_user');
+      const stored = localStorage.getItem('vyntra_active_user');
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
@@ -112,7 +112,7 @@ export const authService = {
       const defaultProfile = INITIAL_PROFILES[0];
       const defaultUser = { id: defaultProfile.id, email: 'elena@example.com' };
       localStorage.setItem(
-        'socialsphere_active_user',
+        'vyntra_active_user',
         JSON.stringify({ user: defaultUser, profile: defaultProfile })
       );
       return { user: defaultUser, profile: defaultProfile };
@@ -144,12 +144,12 @@ export const authService = {
     if (!isSupabaseConfigured) {
       const updated = mockStore.updateProfile(userId, updates);
       // update active session
-      const stored = localStorage.getItem('socialsphere_active_user');
+      const stored = localStorage.getItem('vyntra_active_user');
       if (stored) {
         const parsed = JSON.parse(stored);
         if (parsed.user.id === userId) {
           parsed.profile = updated;
-          localStorage.setItem('socialsphere_active_user', JSON.stringify(parsed));
+          localStorage.setItem('vyntra_active_user', JSON.stringify(parsed));
         }
       }
       return updated;

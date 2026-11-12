@@ -141,7 +141,7 @@ export const ProfilePage: React.FC = () => {
         <p className="text-sm text-neutral-500 mb-6">
           The link you followed may be broken or the account may have been removed.
         </p>
-        <Button onClick={() => navigate('/')}>Back to SocialSphere</Button>
+        <Button onClick={() => navigate('/')}>Back to Vyntra</Button>
       </div>
     );
   }

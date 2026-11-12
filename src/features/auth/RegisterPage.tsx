@@ -44,7 +44,7 @@ export const RegisterPage: React.FC = () => {
         full_name: data.full_name,
         is_private: data.is_private,
       });
-      toast('Account created successfully! Welcome to SocialSphere.', 'success');
+      toast('Account created successfully! Welcome to Vyntra.', 'success');
       navigate('/');
     } catch (err: any) {
       toast(err.message || 'Registration failed', 'error');
@@ -63,7 +63,7 @@ export const RegisterPage: React.FC = () => {
               <Sparkles className="w-7 h-7 fill-white" />
             </div>
             <h1 className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-teal-600 to-cyan-500 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent">
-              Join SocialSphere
+              Join Vyntra
             </h1>
             <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
               Sign up to share moments, photos, and connect with creators
@@ -135,7 +135,7 @@ export const RegisterPage: React.FC = () => {
                   <p className="text-[11px] text-neutral-500 dark:text-neutral-400">
                     {isPrivate
                       ? 'Only followers you approve will see your photos & videos.'
-                      : 'Anyone on SocialSphere can see your profile and posts.'}
+                      : 'Anyone on Vyntra can see your profile and posts.'}
                   </p>
                 </div>
               </label>

@@ -51,7 +51,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
         onPostCreated={() => {
           setIsCreateModalOpen(false);
           // Custom event to refresh feed if on feed page
-          window.dispatchEvent(new CustomEvent('socialsphere:post-created'));
+          window.dispatchEvent(new CustomEvent('vyntra:post-created'));
         }}
       />
     </div>

@@ -34,9 +34,9 @@ export const FeedPage: React.FC = () => {
       fetchPosts();
     };
 
-    window.addEventListener('socialsphere:post-created', handleNewPost);
+    window.addEventListener('vyntra:post-created', handleNewPost);
     return () => {
-      window.removeEventListener('socialsphere:post-created', handleNewPost);
+      window.removeEventListener('vyntra:post-created', handleNewPost);
     };
   }, [fetchPosts]);
 
@@ -62,7 +62,7 @@ export const FeedPage: React.FC = () => {
             <EmptyState
               icon={ImagePlus}
               title="Welcome to your feed"
-              description="Follow users or create your first post to start filling your SocialSphere feed."
+              description="Follow users or create your first post to start filling your Vyntra feed."
             />
           </div>
         ) : (

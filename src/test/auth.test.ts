@@ -9,7 +9,7 @@ describe('Authentication & Profile Validation Schemas', () => {
   describe('loginSchema', () => {
     it('passes with valid email and password', () => {
       const result = loginSchema.safeParse({
-        email: 'alex@socialsphere.com',
+        email: 'alex@vyntra.com',
         password: 'password123',
       });
       expect(result.success).toBe(true);

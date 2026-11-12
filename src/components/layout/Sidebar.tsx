@@ -60,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <Sparkles className="w-5 h-5 fill-white" />
           </div>
           <span className="hidden xl:inline-block font-extrabold text-xl tracking-tight bg-gradient-to-r from-teal-600 to-cyan-500 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent">
-            SocialSphere
+            Vyntra
           </span>
         </div>
 

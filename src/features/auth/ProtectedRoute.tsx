@@ -13,7 +13,7 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ childr
         <div className="flex flex-col items-center gap-3">
           <Loader2 className="w-8 h-8 text-teal-600 animate-spin" />
           <p className="text-xs text-neutral-400 font-medium tracking-wide uppercase">
-            Loading SocialSphere
+            Loading Vyntra
           </p>
         </div>
       </div>

@@ -292,7 +292,7 @@ export const INITIAL_NOTIFICATIONS: Notification[] = [
 
 // Helper to get or init mock state in localStorage
 class MockDataStore {
-  private STORAGE_KEY = 'socialsphere_mock_db';
+  private STORAGE_KEY = 'vyntra_mock_db';
 
   private getState() {
     try {

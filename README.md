@@ -1,6 +1,6 @@
-# SocialSphere 🌐
+# Vyntra 🌐
 
-**SocialSphere** is a modern, premium full-stack social media platform engineered with React, TypeScript, Tailwind CSS, and Supabase. Inspired by the core usability and elegance of Instagram, SocialSphere incorporates original branding, teal/cyan visual accents, rich interactive carousels, 24-hour expiring stories, direct real-time messaging, privacy controls, and granular Row Level Security (RLS).
+**Vyntra** is a modern, premium full-stack social media platform engineered with React, TypeScript, Tailwind CSS, and Supabase. Inspired by the core usability and elegance of Instagram, Vyntra incorporates original branding, teal/cyan visual accents, rich interactive carousels, 24-hour expiring stories, direct real-time messaging, privacy controls, and granular Row Level Security (RLS).
 
 ---
 
@@ -51,7 +51,7 @@
 - Trending hashtag pills for one-click discovery.
 - Privacy filtering: strict exclusion of private account content from unauthorized search viewers.
 
-### 7. Direct Messaging (SocialSphere Direct)
+### 7. Direct Messaging (Vyntra Direct)
 - Two-pane conversation list and chat view on desktop, responsive slide view on mobile.
 - Real-time message synchronization.
 - Read indicators, timestamps, and message bubble alignments.
@@ -96,7 +96,7 @@
 ```text
 vyntra/
 ├── public/
-│   └── logo.svg                     # SocialSphere vector brand icon
+│   └── logo.svg                     # Vyntra vector brand icon
 ├── src/
 │   ├── components/
 │   │   ├── layout/                  # Sidebar, MobileNav, MobileTopBar, AppLayout
@@ -149,7 +149,7 @@ Provide your Supabase URL and Anon key:
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-public-key
 ```
-> **Preview Mode**: If Supabase credentials are not provided, SocialSphere automatically operates in interactive preview mode with local state persistence, allowing immediate end-to-end testing of posts, stories, likes, comments, and navigation.
+> **Preview Mode**: If Supabase credentials are not provided, Vyntra automatically operates in interactive preview mode with local state persistence, allowing immediate end-to-end testing of posts, stories, likes, comments, and navigation.
 
 ### 4. Supabase Database Setup
 1. In your Supabase Dashboard, navigate to the **SQL Editor**.

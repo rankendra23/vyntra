@@ -23,7 +23,7 @@ export const MobileTopBar: React.FC<MobileTopBarProps> = ({
           <Sparkles className="w-4 h-4 fill-white" />
         </div>
         <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-teal-600 to-cyan-500 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent">
-          SocialSphere
+          Vyntra
         </span>
       </div>
 

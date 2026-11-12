@@ -11,7 +11,7 @@ export default {
           200: '#99f6e4',
           300: '#5eead4',
           400: '#2dd4bf',
-          500: '#14b8a6', // Primary Teal/Cyan accent for SocialSphere original brand
+          500: '#14b8a6', // Primary Teal/Cyan accent for Vyntra original brand
           600: '#0d9488',
           700: '#0f766e',
           800: '#115e59',

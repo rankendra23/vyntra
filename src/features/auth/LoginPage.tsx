@@ -37,7 +37,7 @@ export const LoginPage: React.FC = () => {
     try {
       setLoading(true);
       await signIn(data.email, data.password);
-      toast('Welcome back to SocialSphere!', 'success');
+      toast('Welcome back to Vyntra!', 'success');
       navigate(from, { replace: true });
     } catch (err: any) {
       toast(err.message || 'Invalid email or password', 'error');
@@ -47,11 +47,11 @@ export const LoginPage: React.FC = () => {
   };
 
   const handleQuickDemo = async () => {
-    setValue('email', 'elena@socialsphere.com');
+    setValue('email', 'elena@vyntra.com');
     setValue('password', 'password123');
     try {
       setLoading(true);
-      await signIn('elena@socialsphere.com', 'password123');
+      await signIn('elena@vyntra.com', 'password123');
       toast('Signed in as demo creator Elena Rostova!', 'success');
       navigate(from, { replace: true });
     } catch (err: any) {
@@ -72,7 +72,7 @@ export const LoginPage: React.FC = () => {
               <Sparkles className="w-7 h-7 fill-white" />
             </div>
             <h1 className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-teal-600 to-cyan-500 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent">
-              SocialSphere
+              Vyntra
             </h1>
             <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
               Connect, share moments, and explore inspiration
@@ -85,7 +85,7 @@ export const LoginPage: React.FC = () => {
                   isSupabaseLive ? 'bg-emerald-500 animate-pulse' : 'bg-teal-500'
                 }`}
               />
-              {isSupabaseLive ? 'Live Supabase Connected' : 'SocialSphere Preview Mode'}
+              {isSupabaseLive ? 'Live Supabase Connected' : 'Vyntra Preview Mode'}
             </div>
           </div>
 

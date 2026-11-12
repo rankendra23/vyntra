@@ -35,7 +35,7 @@ export const SettingsPage: React.FC = () => {
       toast(
         newStatus
           ? 'Account is now private. Only approved followers can view your posts.'
-          : 'Account is now public. Anyone on SocialSphere can view your posts.',
+          : 'Account is now public. Anyone on Vyntra can view your posts.',
         'success'
       );
     } catch {
@@ -152,7 +152,7 @@ export const SettingsPage: React.FC = () => {
               }`}
             >
               <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
-              {isSupabaseLive ? 'Live Supabase Connected' : 'SocialSphere Preview Mode'}
+              {isSupabaseLive ? 'Live Supabase Connected' : 'Vyntra Preview Mode'}
             </span>
           </div>
 
@@ -189,7 +189,7 @@ export const SettingsPage: React.FC = () => {
           }}
         >
           <LogOut className="w-4 h-4" />
-          Log Out of SocialSphere
+          Log Out of Vyntra
         </Button>
       </div>
     </div>

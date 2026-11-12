@@ -155,7 +155,7 @@ export const RightSidebar: React.FC = () => {
           <span>•</span>
           <a href="#" className="hover:underline">Locations</a>
         </div>
-        <p>© 2026 SocialSphere by Advanced Systems</p>
+        <p>© 2026 Vyntra by Advanced Systems</p>
       </div>
     </div>
   );
