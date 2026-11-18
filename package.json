@@ -21,8 +21,11 @@
     "react-router-dom": "^7.1.5",
     "zod": "^3.24.1"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.67.2",
+    "@rollup/rollup-win32-x64-msvc": "^4.67.2"
+  },
   "devDependencies": {
-    "@rollup/rollup-win32-x64-msvc": "^4.67.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
