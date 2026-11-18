@@ -185,6 +185,22 @@ Runs unit and integration tests across:
 
 ## 🚢 Deployment
 
+### Frontend (Render)
+1. Push your code to your GitHub repository (`main` branch).
+2. Go to [dashboard.render.com](https://dashboard.render.com/) and click **New +** > **Static Site** (or **Blueprint**).
+3. Connect your repository (`rankendra23/vyntra`).
+4. Configure the settings:
+   - **Name**: `vyntra`
+   - **Branch**: `main`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+5. Under **Redirects/Rewrites**:
+   - Add a rewrite rule: **Source**: `/*` | **Destination**: `/index.html` | **Action**: `Rewrite` (already pre-configured in `render.yaml`).
+6. Under **Environment Variables**, add:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+7. Click **Create Static Site**.
+
 ### Frontend (Vercel)
 1. Push code to your Git repository.
 2. Import project in Vercel.
