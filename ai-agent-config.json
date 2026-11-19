@@ -1,0 +1,104 @@
+{
+  "project": {
+    "name": "Vyntra",
+    "description": "Next-generation full-stack social media platform with intelligent AI agents for content moderation, feed recommendation, and automated captioning.",
+    "version": "1.0.0",
+    "repository": "https://github.com/rankendra23/vyntra",
+    "tech_stack": {
+      "frontend": "React 18, TypeScript, Tailwind CSS, Vite",
+      "backend": "Supabase, PostgreSQL, Row Level Security",
+      "deployment": "Render",
+      "ai_engine": "Gemini API / Multi-Agent Orchestration"
+    }
+  },
+  "ai_agents": [
+    {
+      "agent_id": "vyntra-content-moderator",
+      "name": "Content Moderation & Safety Agent",
+      "description": "Inspects uploaded media, post captions, and comments for community guideline compliance, toxicity, hate speech, and spam before database indexing.",
+      "model": "gemini-1.5-flash",
+      "parameters": {
+        "temperature": 0.1,
+        "max_output_tokens": 1024,
+        "safety_thresholds": {
+          "harassment": "BLOCK_MEDIUM_AND_ABOVE",
+          "hate_speech": "BLOCK_LOW_AND_ABOVE",
+          "sexually_explicit": "BLOCK_LOW_AND_ABOVE",
+          "dangerous_content": "BLOCK_LOW_AND_ABOVE"
+        }
+      },
+      "system_prompt": "You are Vyntra's automated safety guardian. Analyze submitted captions and images. Return a JSON verdict with fields: 'is_safe' (boolean), 'confidence_score' (0-1), 'flagged_categories' (list), and 'action' ('APPROVE', 'FLAG_FOR_REVIEW', or 'REJECT').",
+      "tools": [
+        {
+          "name": "database_flag_post",
+          "description": "Flags a post in the PostgreSQL reports/moderation queue if content violations are detected."
+        },
+        {
+          "name": "notify_creator",
+          "description": "Sends a direct safety advisory notification to the creator."
+        }
+      ]
+    },
+    {
+      "agent_id": "vyntra-smart-caption-generator",
+      "name": "Creative Caption & Hashtag Agent",
+      "description": "Generates engaging, context-aware captions and viral hashtags for creator media posts.",
+      "model": "gemini-1.5-pro",
+      "parameters": {
+        "temperature": 0.7,
+        "max_output_tokens": 512
+      },
+      "system_prompt": "You are a social media creative assistant. Given an image description or user prompt, generate 3 caption options (punchy, story-driven, minimalist) accompanied by 5-10 high-relevance hashtags.",
+      "tools": [
+        {
+          "name": "extract_trending_hashtags",
+          "description": "Fetches current trending hashtags from the Vyntra database to optimize reach."
+        }
+      ]
+    },
+    {
+      "agent_id": "vyntra-feed-ranker",
+      "name": "Personalized Feed & Discovery Agent",
+      "description": "Analyzes creator graph, user interaction history, and topic affinity to rank and recommend relevant posts in Explore and the Home feed.",
+      "model": "gemini-1.5-flash",
+      "parameters": {
+        "temperature": 0.2,
+        "max_output_tokens": 2048
+      },
+      "system_prompt": "Analyze the user's recent interactions (likes, saves, comments) against unviewed candidate posts. Output a prioritized list of post IDs sorted by estimated engagement probability.",
+      "tools": [
+        {
+          "name": "fetch_user_affinity_vector",
+          "description": "Retrieves user's engagement embeddings and followed creator topics."
+        },
+        {
+          "name": "rank_candidate_pool",
+          "description": "Applies cosine similarity ranking between candidate posts and user profile vectors."
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "workflow_id": "post-publication-pipeline",
+      "trigger": "supabase.post.inserted",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Safety Screening",
+          "target_agent": "vyntra-content-moderator"
+        },
+        {
+          "step": 2,
+          "name": "Hashtag Indexing",
+          "action": "Extract and index hashtags into post_hashtags table"
+        },
+        {
+          "step": 3,
+          "name": "Follower Distribution",
+          "action": "Broadcast real-time notification to active followers"
+        }
+      ]
+    }
+  ]
+}
